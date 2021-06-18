@@ -1,0 +1,56 @@
+<form class="my-form">
+  <div class="container">
+    <h1>Tabla de registro de casos de pruebas</h1>
+    <ul>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.entrada" name="entrada" placeholder="Entrada"/>
+        </div> 
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.tipop" name="tipop" placeholder="Tipo de Prueba"/>
+        </div>
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.salidae" name="salidae" placeholder="Salida esperadas" />
+        </div>
+      </li>    
+      <li>
+        <textarea [(ngModel)]="art.descripcion" name="descripcion" placeholder="Escribe aquí la descripcion..."></textarea>
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <button class="btn-grid">
+            <span (click)="modificacion()" class="front">Modificar</span>
+          </button>
+          <button (click)="generatePdf()" class="btn-grid">
+            <span class="front">Open PDF</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+
+<div>
+<h1> Tabla de registro de casos de pruebas</h1>
+        <table id="contentToConvert" border="1">
+            <tr>
+              <td>Id</td><td>Entradas</td><td>Tipo de prueba</td><td>Salidas esperadas</td><td>Descripcion</td>
+            </tr>
+            <tr *ngFor="let art of articulos">
+              <td>{{art.id}}</td>
+              <td>{{art.entrada}}</td>
+              <td>{{art.tipop}}</td> 
+              <td>{{art.salidae}}</td>   
+              <td>{{art.descripcion}}</td>  
+              <td><button (click)="baja(art.id)">Borrar?</button></td>
+              <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>            
+            </tr>
+          </table>
+<br>
+      <a routerLink ="/PlantillaPruebas">Ir a Registro de pruebas</a>
+      
+</div>

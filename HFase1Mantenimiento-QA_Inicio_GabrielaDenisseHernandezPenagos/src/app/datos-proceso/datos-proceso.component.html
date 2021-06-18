@@ -1,0 +1,36 @@
+<div>
+   <table border="1">
+    <tr>
+      <td>ID</td><td>Nombre Proceso</td><td>Identificador</td><td>Proposito</td><td>indicadores</td>
+      <td>descripcion</td><td>responsable</td><td>categoria</td><td>participantes</td><td>proceso Relacionado</td>
+      <td>Evidencia Salida</td><td>Evidencia Entrada</td><td>Empresa</td>
+    </tr>
+    <tr *ngFor="let art of articulos">
+      <td>{{art.id}}</td>
+      <td>{{art.nombreProceso}}</td>
+      <td>{{art.identificador}}</td>
+      <td>{{art.proposito}}</td>
+      <td>{{art.indicadores}}</td>
+      <td>{{art.descripcion}}</td>
+      <td>{{art.responsable}}</td>
+      <td>{{art.categoria}}</td>
+      <td>{{art.participantes}}</td>
+      <td>{{art.procesoRe}}</td>
+      <td>{{art.evidenciaSa}}</td>
+      <td>{{art.evidenciaEn}}</td>
+      <td>{{art.empresa}}</td>
+      <td><button (click)="baja(art.id)">Borrar?</button></td>
+      <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>
+    </tr>
+  </table> 
+  <br>
+  <br>
+  <table border ="2">
+    <tr>
+      <td>NombreParticipante</td>
+    </tr>
+    <tr *ngFor="let art2 if arti">
+      <td>{{art2.Participante}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,76 @@
+<form class="my-form">
+  <div class="container">
+    <h1>Modulo Manual</h1>
+    <ul>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.nombreEmpresa" name="nombreEmpresa" placeholder="Nombre de la empresa"/>
+        </div>
+      </li>    
+      <li>
+        <textarea name="objetivoM" [(ngModel)]="art.objetivoM" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí el objetivo...">
+        </textarea>
+      </li>    
+      <li>
+        <textarea name="alcanse" [(ngModel)]="art.alcanse" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí el alcanse...">
+        </textarea>
+      </li>    
+      <li>
+        <textarea name="vocabulario" [(ngModel)]="art.vocabulario" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí el vocabulario...">
+        </textarea>
+      </li>    
+      <li>
+        <textarea name="mision" [(ngModel)]="art.mision" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí la mision...">
+        </textarea>
+      </li>
+      <li>
+        <textarea name="vision" [(ngModel)]="art.vision" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí la vision...">
+        </textarea> 
+      </li>
+      <li>
+        <textarea name="politicas" [(ngModel)]="art.politicas" cols="80" rows="10" style="margin: 0px; width: 801px; height: 132px;" placeholder="Escribe aquí las poliicas...">
+        </textarea>
+      </li>
+      <li>
+        <div class="grid grid-3">
+          <button (click)="alta()" class="btn-grid">
+            <span class="front">Agregar</span>
+          </button>
+          <button (click)="generatePdf()" class="btn-grid">
+            <span class="front">Open PDF</span>
+          </button>
+          <button (click)="modificacion()" class="btn-grid">
+            <span class="front">Modificar</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+    <table border="1">
+      <tr>
+        <td>ID</td><td>Nombre Empresa</td><td>Objetivo del manual</td><td>Alcanse</td><td>Vocabulario</td>
+        <td>Mision</td><td>Vision</td><td>Politicas</td>
+      </tr>
+      <tr *ngFor="let art of articulos">
+        <td>{{art.id}}</td>
+        <td>{{art.nombreEmpresa}}</td>
+        <td>{{art.objetivoM}}</td>
+        <td>{{art.alcanse}}</td>
+        <td>{{art.vocabulario}}</td>
+        <td>{{art.mision}}</td>
+        <td>{{art.vision}}</td>
+        <td>{{art.politicas}}</td>
+        <td><button (click)="baja(art.id)">Borrar?</button></td>
+        <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>
+      </tr>
+    </table>
+    <div>
+      <a routerLink ="/Dashboard">Ir a Proceso</a>
+      <br>
+      <a routerLink ="/Datosp">Ir a Datos de Plantilla</a>
+      <br>
+      <a routerLink ="/PlantillaPruebas">Ir a PlantillaPruebas</a>
+      <br>
+    </div>  
+

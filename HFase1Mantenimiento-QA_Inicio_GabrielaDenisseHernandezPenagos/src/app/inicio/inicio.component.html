@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <table border="1">
+            <tr>
+                <td>Nombre</td>
+            </tr>
+            <tr *ngFor="let art of articulos">
+                <td>{{art.Participante}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <h3>Nombre de la Empresa</h3>
+      <input type="text" [(ngModel)]="art.nombreEmpresa" name="nombreEmpresa" placeholder="Nombre de la empresa"/>
+      <br>
+    <h3>Nombre del proyecto</h3>
+      <input type="text" [(ngModel)]="art.nombreProyecto" name="nombreProyecto" placeholder="Nombre del Proyecto"/>
+      <br>
+    <h3>Participantes</h3>
+      <input type="text" [(ngModel)]="art.Participante" name="Participante" placeholder="Nombre de Participante"/>
+      <br>
+      <br>
+      <td><button (click)="altaParticipante()">Agregar</button></td>
+      <br>
+      <br>
+      <td><button>Agregar Proyecto</button></td>
+
+      <br>
+
+</div>

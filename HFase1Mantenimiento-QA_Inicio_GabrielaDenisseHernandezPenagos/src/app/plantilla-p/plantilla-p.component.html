@@ -1,0 +1,36 @@
+<form class="my-form">
+  <div class="container">
+    <h1>Registro de pruebas</h1>
+    <ul>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.entrada" name="entrada" placeholder="Datos de entrada"/>
+        </div> 
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.tipop" name="tipop" placeholder="Tipo de prueba" />
+        </div>
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.salidae" name="salidae" placeholder="Salida esperada" />
+        </div>
+      </li>    
+      <li>
+        <textarea [(ngModel)]="art.descripcion" name="descripcion" placeholder="Escribe aquí la descripcion..."></textarea>
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <button class="btn-grid">
+            <span (click)="alta()">Agregar</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+<div>
+  <a routerLink ="/Datosp">Ir a Datos de Plantilla</a>
+</div>
+        

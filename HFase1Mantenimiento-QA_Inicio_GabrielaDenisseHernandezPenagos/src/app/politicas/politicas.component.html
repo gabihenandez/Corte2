@@ -1,0 +1,50 @@
+<form class="my-form">
+  <div class="container">
+    <h1>Tabla de politicas registradas</h1>
+    <ul>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.nombrePro" name="nombrePro" placeholder="Nombre del proceso"/>
+        </div> 
+      </li>    
+      <li>
+        <textarea [(ngModel)]="art.descripcion" name="descripcion" placeholder="Escribe aquí la descripcion..."></textarea>
+      </li>    
+      <li>
+        <select  [(ngModel)]="art.tipoP" name="miselect" id="participane">
+          <option selected disabled>-- Eliga una opcion --</option>  
+          <option value="cliente">Cliente</option>
+            <option value="general">General</option>
+          </select> 
+      </li>       
+      <li>
+        <div class="grid grid-3">
+          <button class="btn-grid">
+            <span (click)="alta()"class="front">Alta</span>
+          </button>
+          <button class="btn-grid">
+            <span (click)="modificacion()" class="front">Modificar</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+
+  <div>
+    <table border="1">
+            <tr>
+              <td>Id</td><td>Proyecto perteneciente</td><td>Descripcion</td><td>Tipo de politica</td><td>Borrar</td><td>Seleccionar</td>
+            </tr>
+            <tr *ngFor="let art of politicas">
+              <td>{{art.id}}</td>
+              <td>{{art.nombrePro}}</td>
+              <td>{{art.descripcion}}</td> 
+              <td>{{art.tipoP}}</td>
+
+              <td><button (click)="baja(art.id)">Borrar</button></td>
+              <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>
+            </tr>
+          </table>
+  </div>
+      

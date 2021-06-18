@@ -1,0 +1,20 @@
+<div id="login">
+    <form>
+    <h1>Login</h1>
+    <input type="text" [(ngModel)]="log.empresa" name="empresa" placeholder="Nombre de la empresa" required/>
+    <br>
+    <input type="text" [(ngModel)]="log.usuario" name="username" placeholder="Usuario" required/>
+    <input type="password" [(ngModel)]="log.passwords" name="passwords" placeholder="Contraseña" required/>
+    <select  [(ngModel)]="log.tipoP" name="participante" id="participane">
+      <option selected disabled>-- Eliga una opcion --</option>  
+      <option value="scrum">Scrum master</option>
+        <option value="gestor">Gestor de calidad</option>
+        <option value="product">Product Owner</option>
+        <option value="tester">Tester</option>
+        <option value="desarrollador">Desarrollador</option>
+      </select>
+      <button (click)="login()">Iniciar Sesion</button>
+      <br>
+      <button routerLink ="/Registro">Registrarse</button>
+  </form>
+</div>

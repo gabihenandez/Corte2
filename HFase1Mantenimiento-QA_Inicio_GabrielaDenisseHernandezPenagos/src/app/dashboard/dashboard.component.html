@@ -1,0 +1,109 @@
+<form class="my-form">
+  <div class="container">
+    <h1>Proceso</h1>
+    <ul>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.empresa" name="empresa" placeholder="Empresa">  
+          <input type="text" [(ngModel)]="art.nombreProceso" [(ngModel)]="art2.NombreProseso" name="nombreProceso" placeholder="Nombre del proceso">
+        </div>
+      </li>    
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.identificador" name="identificador" placeholder="Identificador">  
+          <input type="text" [(ngModel)]="art.responsable" name="responsable" placeholder="Responsable"/>   
+        </div>
+      </li>
+      <li >
+        <h5>Selecciona la fase</h5> 
+        <select name [(ngModel)]="art.fase" name="fase" id="fase">
+          <option selected disabled>-- Eliga una opcion --</option>  
+          <option value="inicio">Fase de inicio</option>
+            <option value="requerimentos">Fase de requerimentos</option>
+            <option value="implementacion">Fase de implementacion</option>
+            <option value="desarrollo">Fase de desarrollo</option>
+            <option value="construccion">fase de construccion</option>
+            <option value="mantenimiento">fase de mantenimiento</option>
+            <option value="final">fase final</option>
+          </select>
+      </li>    
+      <li>
+        <textarea name="proposito" [(ngModel)]="art.proposito" placeholder="Escribe aquí el proceso...">
+      </li>    
+      <li>
+        <textarea name="participantes" [(ngModel)]="art.participantes"  placeholder="Escribe aquí los participantes...">
+        </textarea>
+      </li>    
+      <li>
+        <textarea name="indicadores" [(ngModel)]="art.indicadores" placeholder="Escribe aquí los indicadores...">
+        </textarea>
+      </li>
+      <li>
+        <textarea name="descripcion" [(ngModel)]="art.descripcion" placeholder="Escribe aquí la descripcion...">
+        </textarea>
+      </li>
+      <li>
+        <textarea name="procesoRe" [(ngModel)]="art.procesoRe" placeholder="Escribe aquí los procesos relacionados...">
+        </textarea>
+      </li>
+      <li>
+        <textarea name="evidenciaSa" [(ngModel)]="art.evidenciaSa" placeholder="Escribe aquí las evidencias de salida...">
+        </textarea>
+      </li>
+      <li><textarea name="evidenciaEn" [(ngModel)]="art.evidenciaEn" placeholder="Escribe aquí las evidencias de entrada...">
+      </textarea> </li>
+      <li>
+        <div class="grid grid-3">
+          <input type="text" [(ngModel)]="art.categoria" name="categoria" placeholder="Categoria"/>  
+        </div>
+      </li>
+      <li>
+        <div class="grid grid-3">
+          <button (click)="alta()" class="btn-grid">
+            <span class="front">Agregar</span>
+          </button>
+          <button (click)="modificacion()" class="btn-grid">
+            <span class="front">Modificar</span>
+          </button>
+          <button (click)="generatePdf()" class="btn-grid">
+            <span class="front">Open PDF</span>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>
+<div>
+  <table border="1">
+    <tr>
+      <td>ID</td><td>Nombre Proceso</td><td>Identificador</td><td>Proposito</td><td>indicadores</td>
+      <td>descripcion</td><td>responsable</td><td>categoria</td><td>participantes</td><td>proceso Relacionado</td>
+      <td>Evidencia Salida</td><td>Evidencia Entrada</td><td>Empresa</td><td>Fase</td>
+    </tr>
+    <tr *ngFor="let art of articulos">
+      <td>{{art.id}}</td>
+      <td>{{art.nombreProceso}}</td>
+      <td>{{art.identificador}}</td>
+      <td>{{art.proposito}}</td>
+      <td>{{art.indicadores}}</td>
+      <td>{{art.descripcion}}</td>
+      <td>{{art.responsable}}</td>
+      <td>{{art.categoria}}</td>
+      <td>{{art.participantes}}</td>
+      <td>{{art.procesoRe}}</td>
+      <td>{{art.evidenciaSa}}</td>
+      <td>{{art.evidenciaEn}}</td>
+      <td>{{art.empresa}}</td>
+      <td>{{art.fase}}</td>
+      <td><button (click)="baja(art.id)">Borrar?</button></td>
+      <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>
+    </tr>
+  </table> 
+</div>
+    <div>
+      <a routerLink ="/ModuloManual">Ir a ModuloManual</a>
+      <br>
+      <br>
+      <a routerLink ="/PlantillaPruebas">Ir a PlantillaPruebas</a>
+
+    </div>  
